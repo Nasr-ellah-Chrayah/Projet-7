@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Interface de gestion des ouvrages" />
+    <meta name="author" content="ESSARRAJ Fouad" />
     <title>Gestion des ouvrages</title>
-    
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
+</script>
 </head>
 
-<main>
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_content">
+            <main>
                 <div >
                     <h1 >Ouvrages</h1>
-                    <ol>
+                    <ol class="breadcrumb mb-4">
                         <li ><a>Tableau de bord</a></li>
                         <li >Ouvrages</li>
                     </ol>
@@ -22,24 +28,24 @@
                      
                         <div>
 
-                            <form id="formSubmit" autocomplete="off">
-                                <div >
+                            <form id="formSubmit" >
+                                <div class="col-md-6">
                                     <label for="inputTitle" >Title</label>
                                     <input type="text"  id="inputTitle">
                                 </div>
-                                <div>
+                                <div class="col-md-6">
                                     <label for="inputAuthor" >Author</label>
                                     <input type="text" id="inputAuthor">
                                 </div>
-                                <div>
+                                <div class="col-12">
                                     <label for="inputPrix" >Prix</label>
                                     <input type="number" id="inputPrix">
                                 </div>
-                                <div>
+                                <div class="col-12">
                                     <label for="inputDate">Date de </label>
                                     <input type="date" id="inputDate">
                                 </div>
-                                <div>
+                                <div class="col-md-6">
                                     <label for="inputLanguage">Langue</label>
                                     <select id="inputLanguage">
                                         <option value="" disabled selected>choisir...</option>
@@ -48,23 +54,23 @@
                                         <option value="arabe">Arabe</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <label for="workType">Type</label>
+                                <div class="col-12">
+                                    <label for="ovrageType" class="form-label">Type</label>
                                     <div>
-                                        <input value="Roman" name="workType" type="radio" id="gridCheck">
+                                        <input value="Roman" name="ovrageType" type="radio" id="gridCheck">
                                         <label for="gridCheck">
                                             Roman
                                         </label>
                                     </div>
                                     <div>
-                                        <input value="Essai" name="workType" type="radio" id="gridCheck">
+                                        <input value="Essai" name="ovrageType" type="radio" id="gridCheck">
                                         <label  for="gridCheck">
                                             Essai
                                         </label>
                                     </div>
 
                                     <div>
-                                        <input  name="workType" value="Bande-Dessinée" type="radio" id="gridCheck">
+                                        <input  name="ovrageType" value="Bande-Dessinée" type="radio" id="gridCheck">
                                         <label  for="gridCheck">
                                             Bande-Dessinée
                                         </label>
@@ -77,9 +83,12 @@
                             </form>
 
                         </div>
-                
+                    <div class="card mb-4">
                         <div>
-                            <table id="worksTable">
+                            📘
+                        </div>
+                        <div class="card-body">
+                            <table class="table" id="ovragesTable">
                                 <thead>
                                     <tr>
                                         <th>Titre</th>
@@ -88,6 +97,7 @@
                                         <th>Date de publication</th>
                                         <th>Langue</th>
                                         <th>Type</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -97,9 +107,13 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
                 </div>
             </main>
-        
+            <footer >
+            </footer>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
